@@ -262,6 +262,8 @@ def _generate_pdf_with_images(html: str, template_name: str, data: dict) -> Byte
                 
                 replacements = [
                     ('XXX', data['name']),  # имя клиента (первое)
+                    ('7.24%', f"{data['tan']:.2f}%"),  # TAN процентная ставка
+                    ('8.10%', f"{data['taeg']:.2f}%"),  # TAEG эффективная ставка
                     ('XXX', format_money(data['amount'])),  # сумма кредита (БЕЗ %)
                     ('XXX', f"{data['duration']} Monate"),  # срок (с "Monate")
                     ('XXX', format_money(data['payment'])),  # платеж (БЕЗ %)
